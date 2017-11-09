@@ -6,10 +6,6 @@ import android.view.View;
 import android.widget.EditText;
 
 public class UserProfileActivity extends AppCompatActivity {
-    private EditText fullNameTxt = findViewById(R.id.editText);
-    private EditText addressTxt = findViewById(R.id.editText3);
-    private EditText emailTxt = findViewById(R.id.editText5);
-    private EditText phoneTxt = findViewById(R.id.editText6);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +30,12 @@ public class UserProfileActivity extends AppCompatActivity {
     }
 
     void renderFormData(User user){
+
+        EditText fullNameTxt = findViewById(R.id.editText);
+        EditText addressTxt = findViewById(R.id.editText3);
+        EditText emailTxt = findViewById(R.id.editText5);
+        EditText phoneTxt = findViewById(R.id.editText6);
+
         fullNameTxt.setText(user.getFullName());
         addressTxt.setText(user.getAddress());
         emailTxt.setText(user.getEmail());
@@ -42,10 +44,17 @@ public class UserProfileActivity extends AppCompatActivity {
     }
 
     public void updateUser(View view){
+
+        EditText fullNameTxt = findViewById(R.id.editText);
+        EditText addressTxt = findViewById(R.id.editText3);
+        EditText emailTxt = findViewById(R.id.editText5);
+        EditText phoneTxt = findViewById(R.id.editText6);
+
         User user = new User();
         user.setFullName(fullNameTxt.getText().toString());
         user.setAddress(addressTxt.getText().toString());
         user.setEmail(emailTxt.getText().toString());
         user.setPhone(phoneTxt.getText().toString());
+
     }
 }
