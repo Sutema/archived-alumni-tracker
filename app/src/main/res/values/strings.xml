@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Alumni Tracker</string>
+    <string name="button_profile">Profiles</string>
+    <string name="img_photo_profile">Photo profile</string>
+    <string name="txt_name">Name</string>
+    <string name="txt_address">Address</string>
+    <string name="txt_email">Email</string>
+    <string name="txt_phone">Phone</string>
 </resources>

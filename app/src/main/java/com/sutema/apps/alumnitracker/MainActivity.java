@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+
 public class MainActivity extends AppCompatActivity {
 
     public void openLoginActivity(View view) {
@@ -58,8 +59,10 @@ public class MainActivity extends AppCompatActivity {
         //test comment
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
 
-
-
+    public void openProfile(View view){
+        Intent intent = new Intent(this, UserProfileActivity.class);
+        startActivity(intent);
     }
 }
