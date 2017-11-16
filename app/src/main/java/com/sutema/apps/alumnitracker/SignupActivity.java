@@ -17,7 +17,7 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     public void SubmitSignUp (View view){
-        Intent intent = new Intent(this, HomepageActivity.class);
+        Intent intent = new Intent(this, HomePageActivity.class);
         startActivity(intent);
     }
 }

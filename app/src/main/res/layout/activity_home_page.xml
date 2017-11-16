@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sutema.apps.alumnitracker.HomepageActivity">
+    tools:context="com.sutema.apps.alumnitracker.HomePageActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -13,5 +13,5 @@
         android:text="Welcome"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="83dp" />
+        tools:layout_editor_absoluteY="125dp" />
 </android.support.constraint.ConstraintLayout>
