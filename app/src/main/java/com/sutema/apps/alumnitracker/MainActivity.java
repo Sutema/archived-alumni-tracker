@@ -1,6 +1,11 @@
 package com.sutema.apps.alumnitracker;
 
 import android.content.Intent;
+<<<<<<< HEAD
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+=======
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+>>>>>>> 9fc098b73b5eb66c7698be6d6f8d0d60c4efc050
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,8 +67,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+<<<<<<< HEAD
+    public void Register(View view){
+        //Klik Daftar
+        Intent intent = new Intent(this, SignupActivity.class);
+=======
     public void openProfile(View view){
         Intent intent = new Intent(this, UserProfileActivity.class);
+>>>>>>> 9fc098b73b5eb66c7698be6d6f8d0d60c4efc050
         startActivity(intent);
     }
 }
