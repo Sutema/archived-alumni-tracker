@@ -16,13 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-        <activity android:name=".SignupActivity" />
-=======
         <activity android:name=".LoginActivity" />
-        <activity android:name=".UserActivity"></activity>
-        <activity android:name=".UserProfileActivity"></activity>
->>>>>>> 9fc098b73b5eb66c7698be6d6f8d0d60c4efc050
+        <activity android:name=".UserActivity" />
+        <activity android:name=".UserProfileActivity" />
+        <activity android:name=".SignupActivity"></activity>
     </application>
 
 </manifest>
