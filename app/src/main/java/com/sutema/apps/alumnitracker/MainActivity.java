@@ -19,6 +19,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void openJSONDemoActivity (View view) {
+
+        //untuk memanggil JSONDemo
+        Intent myIntent2 = new Intent(this, JSONDemoActivity.class);
+        startActivity(myIntent2);
+    }
+
     public void signUpAttempt (View view) {
 
         //fungsi sementara untuk insert data ke db
