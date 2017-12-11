@@ -9,4 +9,7 @@
     <string name="txt_password">Password</string>
     <string name="txt_confirm_password">Confirm Password</string>
     <string name="button_register">SIGN UP</string>
+    <string name="button_lowongan">My Loker</string>
+    <string name="title_activity_my_loker">MyLokerActivity</string>
+    <string name="action_settings">Settings</string>
 </resources>

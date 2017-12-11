@@ -70,4 +70,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SignupActivity.class);
         startActivity(intent);
     }
+
+    public void openMyLoker(View view){
+        Intent intent = new Intent(this,MyLokerActivity.class);
+        startActivity(intent);
+    }
 }

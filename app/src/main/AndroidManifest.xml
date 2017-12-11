@@ -19,7 +19,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".UserActivity" />
         <activity android:name=".UserProfileActivity" />
-        <activity android:name=".SignupActivity"></activity>
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".MyLokerActivity"></activity>
     </application>
 
 </manifest>
