@@ -1,5 +1,6 @@
 package com.sutema.apps.alumnitracker;
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -59,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
         //test comment
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        AppDatabase appDatabase = Room.databaseBuilder(getApplicationContext(),AppDatabase.class, "sutema.db").build();
     }
 
     public void openProfile(View view){
