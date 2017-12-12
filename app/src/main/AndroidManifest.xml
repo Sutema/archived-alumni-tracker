@@ -20,7 +20,8 @@
         <activity android:name=".UserActivity" />
         <activity android:name=".UserProfileActivity" />
         <activity android:name=".SignupActivity" />
-        <activity android:name=".MyLokerActivity"></activity>
+        <activity android:name=".MyLokerActivity" />
+        <activity android:name=".LokerFormActivity"></activity>
     </application>
 
 </manifest>
