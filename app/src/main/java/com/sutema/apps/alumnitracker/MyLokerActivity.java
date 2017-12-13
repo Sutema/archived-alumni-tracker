@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Date;
@@ -16,6 +17,7 @@ import java.util.List;
 public class MyLokerActivity extends AppCompatActivity {
 
     private TextView notifTxt;
+    private ImageView emptyIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,8 @@ public class MyLokerActivity extends AppCompatActivity {
             Loker[] listLoker = appDatabase.lokerDAO().loadAllLokers();
 
             if (listLoker.length > 0){
-
+                emptyIcon.setVisibility(View.INVISIBLE);
+                notifTxt.setVisibility(View.INVISIBLE);
             }else{
                 notifTxt.setText("List kosong cuy!");
             }
