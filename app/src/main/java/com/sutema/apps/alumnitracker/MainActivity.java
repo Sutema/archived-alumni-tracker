@@ -61,7 +61,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AppDatabase appDatabase = Room.databaseBuilder(getApplicationContext(),AppDatabase.class, "sutema.db").build();
+
+
+
     }
 
     public void openProfile(View view){
