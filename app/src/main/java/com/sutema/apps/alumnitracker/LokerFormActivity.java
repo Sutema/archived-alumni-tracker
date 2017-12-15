@@ -1,6 +1,5 @@
 package com.sutema.apps.alumnitracker;
 
-import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.design.widget.TextInputLayout;
@@ -23,13 +22,16 @@ public class LokerFormActivity extends AppCompatActivity {
     TextInputLayout company;
     TextInputLayout deadline;
     TextInputLayout url;
-    AppDatabase appDatabase;
+    DbSingleton dbSingleton;
+
     Loker newLoker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loker_form);
+
+        dbSingleton = DbSingleton.getInstance(this);
 
         position = findViewById(R.id.TIL_position);
         description = findViewById(R.id.TIL_desc);
@@ -39,9 +41,13 @@ public class LokerFormActivity extends AppCompatActivity {
     }
 
     public void saveForm(View view){
-        newLoker = new Loker();
-        newLoker = collectForm();
-        new SaveNewLoker().execute(newLoker);
+        try{
+            newLoker = new Loker();
+            newLoker = collectForm();
+            new saveNewLoker().execute();
+        }catch (Exception e){
+            Log.e("saveForm()",e.getMessage());
+        }
     }
 
     public Loker collectForm(){
@@ -72,11 +78,22 @@ public class LokerFormActivity extends AppCompatActivity {
         return dateFormat.format(date);
     }
 
-    public class SaveNewLoker extends AsyncTask<Loker, Integer, String>{
+    public class saveNewLoker extends AsyncTask<Void, Integer, String>{
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            try{
+                dbSingleton.appDatabase.lokerDAO().insert(newLoker);
+            }catch (Exception e){
+                Log.e("LokerFormAct",e.getMessage());
+            }
+            return null;
+        }
+
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            appDatabase = Room.databaseBuilder(getApplicationContext(),AppDatabase.class, "sutema.db").build();
+
         }
 
         @Override
@@ -90,12 +107,6 @@ public class LokerFormActivity extends AppCompatActivity {
         @Override
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
-        }
-
-        @Override
-        protected String doInBackground(Loker... lokers) {
-            appDatabase.lokerDAO().insert(lokers);
-            return null;
         }
     }
 }

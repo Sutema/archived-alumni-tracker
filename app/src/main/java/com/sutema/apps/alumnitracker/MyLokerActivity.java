@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class MyLokerActivity extends AppCompatActivity {
@@ -18,36 +17,18 @@ public class MyLokerActivity extends AppCompatActivity {
     private ImageView emptyIcon;
     private TextView progressTxt;
     private Loker[] myLokerList;
-    private AppDatabase appDatabase;
+    DbSingleton dbSingleton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_loker);
 
+        dbSingleton = DbSingleton.getInstance(this);
+
         notifTxt = findViewById(R.id.textView3);
         progressTxt = findViewById(R.id.textView6);
 
-/*
-        AppDatabase appDatabase = null;
-        try {
-            appDatabase = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "sutema.db").allowMainThreadQueries().build();
-            appDatabase.beginTransaction();
-
-            Loker[] listLoker = appDatabase.lokerDAO().loadAllLokers();
-
-            if (listLoker.length > 0){
-                emptyIcon.setVisibility(View.INVISIBLE);
-                notifTxt.setVisibility(View.INVISIBLE);
-            }else{
-                notifTxt.setText("List kosong cuy!");
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-*/
         FetchLoker fetchLoker = new FetchLoker();
         fetchLoker.execute();
 
@@ -70,17 +51,19 @@ public class MyLokerActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             notifTxt.setText("Pre Execute State");
-            appDatabase = Room.databaseBuilder(getApplicationContext(),AppDatabase.class,"sutema.db").build();
         }
 
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            Log.d("isi String di oPE",s);
-            if (myLokerList.length == 0){
-                notifTxt.setText("No Loker Submitted yet...");
-            }else{
-                notifTxt.setText("Download complete");
+            try{
+                if (myLokerList.length == 0){
+                    notifTxt.setText("No Loker Submitted yet...");
+                }else{
+                    notifTxt.setText("Download complete");
+                }
+            }catch (Exception e){
+                Log.e("MyLokerAct",e.getMessage());
             }
         }
 
@@ -92,9 +75,12 @@ public class MyLokerActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(Void... voids) {
-
-            myLokerList =  appDatabase.lokerDAO().loadAllLokers();
-            return "Cubo2";
+            try{
+                myLokerList = dbSingleton.appDatabase.lokerDAO().loadAllLokers();
+            }catch (Exception e){
+                Log.e("MyLokerActivity",e.getMessage());
+            }
+            return null;
         }
     }
 }
