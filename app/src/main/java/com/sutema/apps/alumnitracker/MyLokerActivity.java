@@ -1,10 +1,12 @@
 package com.sutema.apps.alumnitracker;
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -15,6 +17,8 @@ public class MyLokerActivity extends AppCompatActivity {
     private TextView notifTxt;
     private ImageView emptyIcon;
     private TextView progressTxt;
+    private Loker[] myLokerList;
+    private AppDatabase appDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,33 +70,31 @@ public class MyLokerActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             notifTxt.setText("Pre Execute State");
+            appDatabase = Room.databaseBuilder(getApplicationContext(),AppDatabase.class,"sutema.db").build();
         }
 
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            notifTxt.setText("Post Execute State");
+            Log.d("isi String di oPE",s);
+            if (myLokerList.length == 0){
+                notifTxt.setText("No Loker Submitted yet...");
+            }else{
+                notifTxt.setText("Download complete");
+            }
         }
 
         @Override
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
             progressTxt.setText(values[0]+"% completed...");
-
-
         }
 
         @Override
         protected String doInBackground(Void... voids) {
-            for (int i = 0;i < 1000; i++){
-                try{
-                    publishProgress(i*100/1000);
-                    Thread.sleep(10);
-                }catch (InterruptedException e){
-                    Thread.currentThread().interrupt();
-                }
-            }
-            return null;
+
+            myLokerList =  appDatabase.lokerDAO().loadAllLokers();
+            return "Cubo2";
         }
     }
 }
