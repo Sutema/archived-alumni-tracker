@@ -41,7 +41,7 @@ public class LokerFormActivity extends AppCompatActivity {
     public void saveForm(View view){
         newLoker = new Loker();
         newLoker = collectForm();
-        saveNewLoker.execute((Runnable) newLoker);
+        new SaveNewLoker().execute(newLoker);
     }
 
     public Loker collectForm(){
@@ -72,7 +72,7 @@ public class LokerFormActivity extends AppCompatActivity {
         return dateFormat.format(date);
     }
 
-    public class saveNewLoker extends AsyncTask<Loker, Integer, String>{
+    public class SaveNewLoker extends AsyncTask<Loker, Integer, String>{
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
