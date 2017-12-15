@@ -10,18 +10,18 @@ import android.arch.persistence.room.Update;
 @Dao
 public interface LokerDAO{
     @Insert(onConflict = OnConflictStrategy.ABORT)
-    public void insert(Loker... lokers);
+    void insert(Loker... lokers);
 
     @Update
-    public void update(Loker... lokers);
+    void update(Loker... lokers);
 
     @Delete
-    public void delete(Loker... lokers);
+    void delete(Loker... lokers);
 
     @Query("SELECT * FROM Loker")
-    public Loker[] loadAllLokers();
+    Loker[] loadAllLokers();
 
     @Query("SELECT * FROM Loker WHERE id = :idloker")
-    public Loker getLokerById(int idloker);
+    Loker getLokerById(int idloker);
 
 }

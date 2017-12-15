@@ -1,6 +1,5 @@
 package com.sutema.apps.alumnitracker;
 
-import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.design.widget.TextInputLayout;

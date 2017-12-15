@@ -56,11 +56,14 @@ public class MyLokerActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            Log.d("isi String di oPE",s);
-            if (myLokerList.length == 0){
-                notifTxt.setText("No Loker Submitted yet...");
-            }else{
-                notifTxt.setText("Download complete");
+            try{
+                if (myLokerList.length == 0){
+                    notifTxt.setText("No Loker Submitted yet...");
+                }else{
+                    notifTxt.setText("Download complete");
+                }
+            }catch (Exception e){
+                Log.e("MyLokerAct",e.getMessage());
             }
         }
 
@@ -77,8 +80,7 @@ public class MyLokerActivity extends AppCompatActivity {
             }catch (Exception e){
                 Log.e("MyLokerActivity",e.getMessage());
             }
-
-            return "Cubo2";
+            return null;
         }
     }
 }
