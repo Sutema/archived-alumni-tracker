@@ -11,7 +11,6 @@ import android.view.View;
 
 
 public class MainActivity extends AppCompatActivity {
-
     public void openLoginActivity(View view) {
 
         //untuk memanggil login page
@@ -61,9 +60,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-
+        DbSingleton dbSingleton = DbSingleton.getInstance(getApplicationContext());
     }
 
     public void openProfile(View view){
