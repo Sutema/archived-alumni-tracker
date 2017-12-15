@@ -26,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(myIntent2);
     }
 
+    public void openMapsActivity (View view) {
+
+        //untuk memanggil JSONDemo
+        Intent myIntent3 = new Intent(this, MapsActivity.class);
+        startActivity(myIntent3);
+    }
+
     public void signUpAttempt (View view) {
 
         //fungsi sementara untuk insert data ke db
