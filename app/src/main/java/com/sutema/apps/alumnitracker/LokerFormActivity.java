@@ -2,9 +2,9 @@ package com.sutema.apps.alumnitracker;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -13,8 +13,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
-
-import static android.app.PendingIntent.getActivity;
 
 public class LokerFormActivity extends AppCompatActivity {
     TextInputLayout position;
@@ -44,7 +42,7 @@ public class LokerFormActivity extends AppCompatActivity {
         try{
             newLoker = new Loker();
             newLoker = collectForm();
-            new saveNewLoker().execute();
+            new SaveNewLoker().execute();
         }catch (Exception e){
             Log.e("saveForm()",e.getMessage());
         }
@@ -78,7 +76,7 @@ public class LokerFormActivity extends AppCompatActivity {
         return dateFormat.format(date);
     }
 
-    public class saveNewLoker extends AsyncTask<Void, Integer, String>{
+    public class SaveNewLoker extends AsyncTask<Void, Integer, String>{
 
         @Override
         protected String doInBackground(Void... voids) {
