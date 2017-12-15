@@ -60,7 +60,7 @@ public class MyLokerActivity extends AppCompatActivity {
                 if (myLokerList.length == 0){
                     notifTxt.setText("No Loker Submitted yet...");
                 }else{
-                    notifTxt.setText("Download complete");
+                    notifTxt.setText(myLokerList.length+" Loker submitted");
                 }
             }catch (Exception e){
                 Log.e("MyLokerAct",e.getMessage());
