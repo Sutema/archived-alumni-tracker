@@ -12,14 +12,14 @@ class Loker {
     @PrimaryKey
     public int id;
 
-    public String position;
-    public String desc;
-    public String company;
-    public String created_at;
-    public String updated_at;
-    public String deadline_at;
-    public String url;
-    public String submitter;
+    String position;
+    String desc;
+    String company;
+    String created_at;
+    String updated_at;
+    String deadline_at;
+    String url;
+    String submitter;
 
     public int getId() {
         return id;
