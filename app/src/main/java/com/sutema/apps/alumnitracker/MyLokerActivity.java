@@ -32,6 +32,7 @@ public class MyLokerActivity extends AppCompatActivity {
     private Loker[] myLokerList;
     private ListView lokerListView;
     DbSingleton dbSingleton;
+    LokerAdapter lokerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +45,8 @@ public class MyLokerActivity extends AppCompatActivity {
         progressTxt = findViewById(R.id.textView6);
         lokerListView = findViewById(R.id.listview_loker);
 
-        FetchLoker fetchLoker = new FetchLoker();
-        fetchLoker.execute();
+        //FetchLoker fetchLoker = new FetchLoker();
+        //fetchLoker.execute();
 
         FloatingActionButton createLokerBtn = findViewById(R.id.floatingActionButton);
         createLokerBtn.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +55,41 @@ public class MyLokerActivity extends AppCompatActivity {
                 openLokerForm();
             }
         });
+
+        // Exp Basic Listview
+        emptyIcon.setVisibility(View.INVISIBLE);
+        notifTxt.setVisibility(View.INVISIBLE);
+        lokerListView.setVisibility(View.VISIBLE);
+        final String[] myStringArray = new String[]{
+                "Javascript",
+                "MySQL",
+                "Java",
+                "HTML5",
+                "CSS"
+        };
+
+        final Loker[] myLokerData = new Loker[]{
+                new Loker(1,"Javascript","Javascript Corp"),
+                new Loker(2,"MySQL","MySQL Corp"),
+                new Loker(3,"Java", "Java Corp"),
+                new Loker(4,"HTML5","HTML5 Corp"),
+                new Loker(5,"CSS","CSS Corp")
+        };
+
+        lokerAdapter = new LokerAdapter(this,R.layout.loker_row, myLokerData);
+
+        if(lokerListView != null){
+            lokerListView.setAdapter(lokerAdapter);
+        }
+
+        lokerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Log.i("Loker", myStringArray[i]);
+            }
+        });
+
+
 
     }
 

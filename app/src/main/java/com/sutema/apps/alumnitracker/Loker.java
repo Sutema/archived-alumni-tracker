@@ -1,6 +1,7 @@
 package com.sutema.apps.alumnitracker;
 
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 /**
@@ -20,6 +21,17 @@ class Loker {
     String deadline_at;
     String url;
     String submitter;
+
+    @Ignore
+    public Loker(){
+
+    }
+
+    public Loker(int id, String position,String company){
+        this.id = id;
+        this.position = position;
+        this.company = company;
+    }
 
     public int getId() {
         return id;
