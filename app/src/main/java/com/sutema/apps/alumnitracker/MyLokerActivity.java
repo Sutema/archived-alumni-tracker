@@ -1,5 +1,6 @@
 package com.sutema.apps.alumnitracker;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,13 +13,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.EmptyStackException;
-
 public class MyLokerActivity extends AppCompatActivity {
 
     private TextView notifTxt;
     private ImageView emptyIcon;
-    private TextView progressTxt;
+
     private Loker[] myLokerList;
     private ListView lokerListView;
     DbSingleton dbSingleton;
@@ -32,7 +31,7 @@ public class MyLokerActivity extends AppCompatActivity {
         dbSingleton = DbSingleton.getInstance(this);
         emptyIcon = findViewById(R.id.imageView2);
         notifTxt = findViewById(R.id.textView3);
-        progressTxt = findViewById(R.id.textView6);
+
         lokerListView = findViewById(R.id.listview_loker);
 
         FetchLoker fetchLoker = new FetchLoker();
@@ -51,13 +50,16 @@ public class MyLokerActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LokerFormActivity.class);
         startActivity(intent);
     }
+    @SuppressLint("StaticFieldLeak")
     public class FetchLoker extends AsyncTask<Void, Integer, String>{
+        @SuppressLint("SetTextI18n")
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
             notifTxt.setText("Pre Execute State");
         }
 
+        @SuppressLint("SetTextI18n")
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
@@ -79,7 +81,6 @@ public class MyLokerActivity extends AppCompatActivity {
         @Override
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
-            progressTxt.setText(values[0]+"% completed...");
         }
 
         @Override
