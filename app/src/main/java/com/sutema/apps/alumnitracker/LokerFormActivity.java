@@ -51,14 +51,14 @@ public class LokerFormActivity extends AppCompatActivity {
     public Loker collectForm(){
         Loker dataForm = new Loker();
         try{
-            dataForm.id = generateId();
-            dataForm.position = position.getEditText().getText().toString();
-            dataForm.desc = description.getEditText().getText().toString();
-            dataForm.company = company.getEditText().getText().toString();
-            dataForm.deadline_at = reformattedDate(new Date(deadline.getEditText().getText().toString())) ;
-            dataForm.url = url.getEditText().getText().toString();
-            dataForm.created_at = reformattedDate(new Date());
-            dataForm.updated_at = null;
+            dataForm.setId(generateId());
+            dataForm.setPosition(position.getEditText().getText().toString());
+            dataForm.setDesc(description.getEditText().getText().toString());
+            dataForm.setCompany(company.getEditText().getText().toString());
+            dataForm.setDeadline_at(reformattedDate(new Date(deadline.getEditText().getText().toString()))); ;
+            dataForm.setUrl(url.getEditText().getText().toString());
+            dataForm.setCreated_at(reformattedDate(new Date()));
+            dataForm.setUpdated_at(null);
         }catch (Exception e){
             Log.e("collectForm",e.getMessage());
         }

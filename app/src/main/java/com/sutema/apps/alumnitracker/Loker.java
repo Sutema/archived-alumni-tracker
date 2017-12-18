@@ -5,29 +5,30 @@ import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 /**
- * Created by Febrinanda on 12/13/2017.
+ * Created by Febrinanda on Mon,18 December 2017.
+ * Happy Coding Worlds!
  */
 
 @Entity
 class Loker {
     @PrimaryKey
-    public int id;
+    private int id;
 
-    String position;
-    String desc;
-    String company;
-    String created_at;
-    String updated_at;
-    String deadline_at;
-    String url;
-    String submitter;
+    private String position;
+    private String desc;
+    private String company;
+    private String created_at;
+    private String updated_at;
+    private String deadline_at;
+    private String url;
+    private String submitter;
 
     @Ignore
-    public Loker(){
+    Loker(){
 
     }
 
-    public Loker(int id, String position,String company){
+    Loker(int id, String position, String company){
         this.id = id;
         this.position = position;
         this.company = company;
@@ -41,67 +42,67 @@ class Loker {
         this.id = id;
     }
 
-    public String getPosition() {
+    String getPosition() {
         return position;
     }
 
-    public void setPosition(String position) {
+    void setPosition(String position) {
         this.position = position;
     }
 
-    public String getDesc() {
+    String getDesc() {
         return desc;
     }
 
-    public void setDesc(String desc) {
+    void setDesc(String desc) {
         this.desc = desc;
     }
 
-    public String getCompany() {
+    String getCompany() {
         return company;
     }
 
-    public void setCompany(String company) {
+    void setCompany(String company) {
         this.company = company;
     }
 
-    public String getCreated_at() {
+    String getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(String created_at) {
+    void setCreated_at(String created_at) {
         this.created_at = created_at;
     }
 
-    public String getUpdated_at() {
+    String getUpdated_at() {
         return updated_at;
     }
 
-    public void setUpdated_at(String updated_at) {
+    void setUpdated_at(String updated_at) {
         this.updated_at = updated_at;
     }
 
-    public String getDeadline_at() {
+    String getDeadline_at() {
         return deadline_at;
     }
 
-    public void setDeadline_at(String deadline_at) {
+    void setDeadline_at(String deadline_at) {
         this.deadline_at = deadline_at;
     }
 
-    public String getUrl() {
+    String getUrl() {
         return url;
     }
 
-    public void setUrl(String url) {
+    void setUrl(String url) {
         this.url = url;
     }
 
-    public String getSubmitter() {
+    String getSubmitter() {
         return submitter;
     }
 
-    public void setSubmitter(String submitter) {
+    void setSubmitter(String submitter) {
         this.submitter = submitter;
     }
 
