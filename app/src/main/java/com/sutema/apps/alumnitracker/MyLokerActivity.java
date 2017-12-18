@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.EmptyStackException;
+
 public class MyLokerActivity extends AppCompatActivity {
 
     private TextView notifTxt;
@@ -101,8 +103,19 @@ public class MyLokerActivity extends AppCompatActivity {
         lokerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Log.i("LokerView","Item "+i);
-                Log.i("Obj",myLokerList[i].getCompany());
+                try{
+                    Log.i("LokerView","Item "+i);
+                    Log.i("ID",String.valueOf(myLokerList[i].getId()));
+                    Log.i("Position",myLokerList[i].getPosition());
+                    Log.i("Description",myLokerList[i].getDesc());
+                    Log.i("Company",myLokerList[i].getCompany());
+                    Log.i("Created_at",myLokerList[i].getCreated_at());
+                    Log.i("Updated_at",myLokerList[i].getUpdated_at());
+                    Log.i("URL",myLokerList[i].getUrl());
+                    Log.i("Submitter",myLokerList[i].getSubmitter());
+                } catch (Throwable e){
+                    Log.e("Loker Item Click", e.getMessage());
+                }
             }
         });
     }
