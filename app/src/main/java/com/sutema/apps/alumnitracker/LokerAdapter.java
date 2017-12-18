@@ -1,5 +1,6 @@
 package com.sutema.apps.alumnitracker;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,14 +12,15 @@ import android.widget.TextView;
 
 /**
  * Created by Febrinanda on 12/18/2017.
+ * Happy Coding Worlds!
  */
 
 public class LokerAdapter extends ArrayAdapter<Loker> {
-    Context context;
-    int layoutResourceId;
-    Loker data[] = null;
+    private Context context;
+    private int layoutResourceId;
+    private Loker data[] = null;
 
-    public LokerAdapter(Context context, int resource, Loker[] data){
+    LokerAdapter(Context context, int resource, Loker[] data){
         super(context,resource,data);
         this.context = context;
         this.layoutResourceId = resource;
@@ -30,6 +32,7 @@ public class LokerAdapter extends ArrayAdapter<Loker> {
         return super.getItem(position);
     }
 
+    @SuppressLint("ViewHolder")
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
