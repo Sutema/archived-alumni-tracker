@@ -10,17 +10,17 @@ public class SignupActivity extends AppCompatActivity {
     EditText name;
     EditText email;
     EditText password;
-    EditText confirmpassword;
+    EditText confirmPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        name = (EditText) findViewById(R.id.editText8);
-        email = (EditText) findViewById(R.id.editText9);
-        password = (EditText) findViewById(R.id.editText10);
-        confirmpassword = (EditText) findViewById(R.id.editText11);
+        name = findViewById(R.id.editText8);
+        email = findViewById(R.id.editText9);
+        password = findViewById(R.id.editText10);
+        confirmPassword = findViewById(R.id.editText11);
     }
 
     public void SignUp (View view) {
