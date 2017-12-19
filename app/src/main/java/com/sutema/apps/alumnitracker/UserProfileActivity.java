@@ -29,7 +29,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
     User getUserProfile(){
         User user = new User();
-        user.setID(9999);
+        user.setId(9999);
         user.setFullName("Dummy People");
         user.setAddress("Sesame Street");
         user.setEmail("dummy@people.com");

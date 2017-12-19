@@ -6,18 +6,18 @@ package com.sutema.apps.alumnitracker;
  */
 
 class User {
-    private int ID;
+    private int id;
     private String fullName;
     private String address;
     private String email;
     private String phone;
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    void setID(int ID) {
-        this.ID = ID;
+    void setId(int id) {
+        this.id = id;
     }
 
     String getFullName() {
