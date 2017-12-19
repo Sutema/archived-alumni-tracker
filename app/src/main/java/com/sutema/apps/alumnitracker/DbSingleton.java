@@ -1,5 +1,6 @@
 package com.sutema.apps.alumnitracker;
 
+import android.annotation.SuppressLint;
 import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -7,9 +8,10 @@ import android.util.Log;
 
 /**
  * Created by Febrinanda on 12/15/2017.
+ * Hello cruel worlds!
  */
 
-public class DbSingleton {
+class DbSingleton {
     private static DbSingleton single_instance = null;
     AppDatabase appDatabase;
 
@@ -18,7 +20,7 @@ public class DbSingleton {
         dBasyncTask.execute(context);
     }
 
-    public static DbSingleton getInstance(Context context){
+    static DbSingleton getInstance(Context context){
         if(single_instance == null){
             synchronized (DbSingleton.class){
                 single_instance = new DbSingleton(context);
@@ -27,6 +29,7 @@ public class DbSingleton {
         return single_instance;
     }
 
+    @SuppressLint("StaticFieldLeak")
     public class DBasyncTask extends AsyncTask<Context, Integer, String>{
         @Override
         protected String doInBackground(Context... contexts) {
