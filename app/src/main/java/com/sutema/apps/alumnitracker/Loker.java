@@ -17,9 +17,9 @@ class Loker {
     private String position;
     private String desc;
     private String company;
-    private String created_at;
-    private String updated_at;
-    private String deadline_at;
+    private String createdAt;
+    private String updatedAt;
+    private String deadlineAt;
     private String url;
     private String submitter;
 
@@ -66,28 +66,28 @@ class Loker {
         this.company = company;
     }
 
-    String getCreated_at() {
-        return created_at;
+    String getCreatedAt() {
+        return createdAt;
     }
 
-    void setCreated_at(String created_at) {
-        this.created_at = created_at;
+    void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
-    String getUpdated_at() {
-        return updated_at;
+    String getUpdatedAt() {
+        return updatedAt;
     }
 
-    void setUpdated_at(String updated_at) {
-        this.updated_at = updated_at;
+    void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
-    String getDeadline_at() {
-        return deadline_at;
+    String getDeadlineAt() {
+        return deadlineAt;
     }
 
-    void setDeadline_at(String deadline_at) {
-        this.deadline_at = deadline_at;
+    void setDeadlineAt(String deadlineAt) {
+        this.deadlineAt = deadlineAt;
     }
 
     String getUrl() {

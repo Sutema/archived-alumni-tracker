@@ -110,8 +110,8 @@ public class MyLokerActivity extends AppCompatActivity {
                     Log.i("Position",myLokerList[i].getPosition());
                     Log.i("Description",myLokerList[i].getDesc());
                     Log.i("Company",myLokerList[i].getCompany());
-                    Log.i("Created_at",myLokerList[i].getCreated_at());
-                    Log.i("Updated_at",myLokerList[i].getUpdated_at());
+                    Log.i("Created_at",myLokerList[i].getCreatedAt());
+                    Log.i("Updated_at",myLokerList[i].getUpdatedAt());
                     Log.i("URL",myLokerList[i].getUrl());
                     Log.i("Submitter",myLokerList[i].getSubmitter());
                 } catch (Throwable e){

@@ -55,10 +55,10 @@ public class LokerFormActivity extends AppCompatActivity {
             dataForm.setPosition(position.getEditText().getText().toString());
             dataForm.setDesc(description.getEditText().getText().toString());
             dataForm.setCompany(company.getEditText().getText().toString());
-            dataForm.setDeadline_at(reformattedDate(new Date(deadline.getEditText().getText().toString()))); ;
+            dataForm.setDeadlineAt(reformattedDate(new Date(deadline.getEditText().getText().toString()))); ;
             dataForm.setUrl(url.getEditText().getText().toString());
-            dataForm.setCreated_at(reformattedDate(new Date()));
-            dataForm.setUpdated_at(null);
+            dataForm.setCreatedAt(reformattedDate(new Date()));
+            dataForm.setUpdatedAt(null);
         }catch (Exception e){
             Log.e("collectForm",e.getMessage());
         }
