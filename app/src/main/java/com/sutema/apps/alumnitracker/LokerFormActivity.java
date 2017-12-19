@@ -1,5 +1,6 @@
 package com.sutema.apps.alumnitracker;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Random;
 
 public class LokerFormActivity extends AppCompatActivity {
@@ -72,10 +74,11 @@ public class LokerFormActivity extends AppCompatActivity {
     }
 
     public String reformattedDate(Date date){
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.US);
         return dateFormat.format(date);
     }
 
+    @SuppressLint("StaticFieldLeak")
     public class SaveNewLoker extends AsyncTask<Void, Integer, String>{
 
         @Override
