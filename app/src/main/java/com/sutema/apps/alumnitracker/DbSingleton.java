@@ -2,9 +2,12 @@ package com.sutema.apps.alumnitracker;
 
 import android.annotation.SuppressLint;
 import android.arch.persistence.room.Room;
+import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+
+import static com.sutema.apps.alumnitracker.AppDatabase.MIGRATION_1_2;
 
 /**
  * Created by Febrinanda on 12/15/2017.
@@ -33,7 +36,7 @@ class DbSingleton {
     public class DBasyncTask extends AsyncTask<Context, Integer, String>{
         @Override
         protected String doInBackground(Context... contexts) {
-            appDatabase = Room.databaseBuilder(contexts[0], AppDatabase.class, "sutema.db").build();
+            appDatabase = Room.databaseBuilder(contexts[0], AppDatabase.class, "sutema.db").addMigrations(MIGRATION_1_2).build();
             Log.i("DbSingleton","DB Singleton created!");
             return null;
         }

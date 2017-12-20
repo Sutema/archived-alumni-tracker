@@ -66,6 +66,7 @@ public class MyLokerActivity extends AppCompatActivity {
             Log.i("onPostExecute","Executed!");
             try{
                 if (myLokerList.length == 0){
+
                     notifTxt.setText("No Loker Submitted yet...");
                 }else{
                     emptyIcon.setVisibility(View.INVISIBLE);
