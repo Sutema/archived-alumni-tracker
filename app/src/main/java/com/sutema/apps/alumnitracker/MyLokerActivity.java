@@ -20,7 +20,6 @@ public class MyLokerActivity extends AppCompatActivity {
 
     private Loker[] myLokerList;
     private ListView lokerListView;
-    DbSingleton dbSingleton;
     LokerAdapter lokerAdapter;
 
     @Override
@@ -28,7 +27,6 @@ public class MyLokerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_loker);
 
-        dbSingleton = DbSingleton.getInstance(this);
         emptyIcon = findViewById(R.id.imageView2);
         notifTxt = findViewById(R.id.textView3);
 
@@ -87,7 +85,7 @@ public class MyLokerActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(Void... voids) {
             try{
-                myLokerList = dbSingleton.appDatabase.lokerDAO().loadAllLokers();
+
             }catch (Exception e){
                 Log.e("MyLokerActivity",e.getMessage());
             }

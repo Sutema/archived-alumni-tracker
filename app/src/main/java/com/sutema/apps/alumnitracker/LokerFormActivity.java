@@ -22,7 +22,7 @@ public class LokerFormActivity extends AppCompatActivity {
     TextInputLayout company;
     TextInputLayout deadline;
     TextInputLayout url;
-    DbSingleton dbSingleton;
+
 
     Loker newLoker;
 
@@ -30,8 +30,6 @@ public class LokerFormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loker_form);
-
-        dbSingleton = DbSingleton.getInstance(this);
 
         position = findViewById(R.id.TIL_position);
         description = findViewById(R.id.TIL_desc);
@@ -84,7 +82,7 @@ public class LokerFormActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(Void... voids) {
             try{
-                dbSingleton.appDatabase.lokerDAO().insert(newLoker);
+
             }catch (Exception e){
                 Log.e("LokerFormAct",e.getMessage());
             }

@@ -59,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
         //test comment
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        DbSingleton dbSingleton = DbSingleton.getInstance(getApplicationContext());
     }
 
     public void openProfile(View view){
