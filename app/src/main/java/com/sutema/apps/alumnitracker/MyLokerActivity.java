@@ -63,7 +63,7 @@ public class MyLokerActivity extends AppCompatActivity {
             super.onPostExecute(s);
             Log.i("onPostExecute","Executed!");
             try{
-                if (myLokerList.length == 0){
+                if (myLokerList == null){
 
                     notifTxt.setText("No Loker Submitted yet...");
                 }else{
@@ -106,13 +106,6 @@ public class MyLokerActivity extends AppCompatActivity {
                 try{
                     Log.i("LokerView","Item "+i);
                     Log.i("ID",String.valueOf(myLokerList[i].getId()));
-                    Log.i("Position",myLokerList[i].getPosition());
-                    Log.i("Description",myLokerList[i].getDesc());
-                    Log.i("Company",myLokerList[i].getCompany());
-                    Log.i("Created_at",myLokerList[i].getCreatedAt());
-                    Log.i("Updated_at",myLokerList[i].getUpdatedAt());
-                    Log.i("URL",myLokerList[i].getUrl());
-                    Log.i("Submitter",myLokerList[i].getSubmitter());
                 } catch (Throwable e){
                     Log.e("Loker Item Click", e.getMessage());
                 }
