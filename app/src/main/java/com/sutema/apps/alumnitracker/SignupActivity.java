@@ -23,8 +23,8 @@ public class SignupActivity extends AppCompatActivity {
     EditText name;
     EditText email;
     EditText password;
-    EditText confirmpassword;
-    TextView serverresponse;
+    EditText confirmPassword;
+    TextView serverResponse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +33,11 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     public void SignUp (View view) {
-        serverresponse =  findViewById(R.id.textView7);
+        serverResponse =  findViewById(R.id.textView7);
         name = (EditText) findViewById(R.id.editText8);
         email = (EditText) findViewById(R.id.editText9);
         password = (EditText) findViewById(R.id.editText10);
-        confirmpassword = (EditText) findViewById(R.id.editText11);
+        confirmPassword = (EditText) findViewById(R.id.editText11);
 
         System.out.println("email:"+email.getText());
         System.out.println("password"+password.getText());
@@ -51,13 +51,13 @@ public class SignupActivity extends AppCompatActivity {
                 Log.d("Response:", response);
                 Gson gson = new Gson();
                 BackEndResponse backendresponse = gson.fromJson(response, BackEndResponse.class);
-                serverresponse.setText(backendresponse.message);
+                serverResponse.setText(backendresponse.message);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d("Response", String.valueOf(error));
-                serverresponse.setText((CharSequence) error);
+                serverResponse.setText((CharSequence) error);
             }
         }){
             @Override
