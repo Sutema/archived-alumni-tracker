@@ -50,8 +50,8 @@ public class SignupActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 Log.d("Response:", response);
                 Gson gson = new Gson();
-                BackEndResponse backendresponse = gson.fromJson(response, BackEndResponse.class);
-                serverResponse.setText(backendresponse.message);
+                BackEndResponse backEndResponse = gson.fromJson(response, BackEndResponse.class);
+                serverResponse.setText(backEndResponse.message);
             }
         }, new Response.ErrorListener() {
             @Override
