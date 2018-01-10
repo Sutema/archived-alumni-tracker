@@ -23,6 +23,8 @@
         <activity android:name=".UserProfileActivity" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".JSONDemoActivity"></activity>
+        <activity android:name=".MyLokerActivity" />
+        <activity android:name=".LokerFormActivity"></activity>
     </application>
 
 </manifest>

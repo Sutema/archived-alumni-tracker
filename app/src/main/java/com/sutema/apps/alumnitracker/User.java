@@ -2,52 +2,53 @@ package com.sutema.apps.alumnitracker;
 
 /**
  * Created by Febrinanda on 11/9/2017.
+ * Happy Coding Worlds!
  */
 
 class User {
-    private int ID;
+    private int id;
     private String fullName;
     private String address;
     private String email;
     private String phone;
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    void setId(int id) {
+        this.id = id;
     }
 
-    public String getFullName() {
+    String getFullName() {
         return fullName;
     }
 
-    public void setFullName(String fullName) {
+    void setFullName(String fullName) {
         this.fullName = fullName;
     }
 
-    public String getAddress() {
+    String getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    void setAddress(String address) {
         this.address = address;
     }
 
-    public String getEmail() {
+    String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    void setEmail(String email) {
         this.email = email;
     }
 
-    public String getPhone() {
+    String getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    void setPhone(String phone) {
         this.phone = phone;
     }
 }

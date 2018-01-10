@@ -1,5 +1,6 @@
 package com.sutema.apps.alumnitracker;
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,7 +11,6 @@ import android.view.View;
 
 
 public class MainActivity extends AppCompatActivity {
-
     public void openLoginActivity(View view) {
 
         //untuk memanggil login page
@@ -75,6 +75,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void signUp(View view){
         Intent intent = new Intent(this, SignupActivity.class);
+        startActivity(intent);
+    }
+
+    public void openMyLoker(View view){
+        Intent intent = new Intent(this,MyLokerActivity.class);
         startActivity(intent);
     }
 }

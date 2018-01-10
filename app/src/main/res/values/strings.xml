@@ -9,4 +9,15 @@
     <string name="txt_password">Password</string>
     <string name="txt_confirm_password">Confirm Password</string>
     <string name="button_register">SIGN UP</string>
+    <string name="button_lowongan">My Loker</string>
+    <string name="title_activity_my_loker">MyLokerActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="txt_job_title">Title / Position</string>
+    <string name="txt_desc">Description</string>
+    <string name="txt_company">Company</string>
+    <string name="txt_deadline">Deadline</string>
+    <string name="txt_link">URL Link</string>
+    <string name="txt_submitter">Submitted By</string>
+    <string name="txt_empty_loker">No Loker Submit Yet...</string>
+    <string name="button_login">LOGIN</string>
 </resources>

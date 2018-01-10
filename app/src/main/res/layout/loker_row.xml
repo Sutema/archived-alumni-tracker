@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txt_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.SearchResult.Title"
+        android:textColor="@color/colorPrimaryDark"
+        tools:text="Nama posisi" />
+
+    <TextView
+        android:id="@+id/txt_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/img_loker"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/img_loker"
+        android:layout_toRightOf="@+id/img_loker"
+        android:textColor="@color/cardview_dark_background"
+        tools:text="Nama Perusahaan" />
+
+    <TextView
+        android:id="@+id/txt_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txt_company"
+        android:layout_alignStart="@+id/txt_company"
+        android:layout_below="@+id/txt_company"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="0dp"
+        tools:text="Deskripsi kerja" />
+
+    <ImageView
+        android:id="@+id/img_loker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txt_position"
+        android:layout_alignStart="@+id/txt_position"
+        android:layout_below="@+id/txt_position"
+        android:layout_marginBottom="@dimen/floating_label_text_size"
+        android:layout_marginTop="4dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/txt_company"
+        android:cropToPadding="true"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/ic_it_employee" />
+</RelativeLayout>
