@@ -20,4 +20,5 @@
     <string name="txt_submitter">Submitted By</string>
     <string name="txt_empty_loker">No Loker Submit Yet...</string>
     <string name="button_login">LOGIN</string>
+    <string name="explore">Explore</string>
 </resources>

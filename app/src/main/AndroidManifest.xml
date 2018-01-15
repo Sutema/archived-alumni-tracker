@@ -22,9 +22,10 @@
         <activity android:name=".UserActivity" />
         <activity android:name=".UserProfileActivity" />
         <activity android:name=".SignupActivity" />
-        <activity android:name=".JSONDemoActivity"></activity>
+        <activity android:name=".JSONDemoActivity" />
         <activity android:name=".MyLokerActivity" />
-        <activity android:name=".LokerFormActivity"></activity>
+        <activity android:name=".LokerFormActivity" />
+        <activity android:name=".ExploreAlumni"></activity>
     </application>
 
 </manifest>

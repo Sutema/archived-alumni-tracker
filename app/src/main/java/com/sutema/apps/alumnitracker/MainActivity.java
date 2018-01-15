@@ -82,4 +82,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,MyLokerActivity.class);
         startActivity(intent);
     }
+
+    public void exploreAlumni(View view){
+        Intent intent = new Intent(this, ExploreAlumni.class);
+        startActivity(intent);
+    }
 }
